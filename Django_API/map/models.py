@@ -4,27 +4,20 @@ from django.db import models
 
 
 class User(models.Model):
-    ID = models.AutoField("Айдишник", primary_key=True, auto_created=True, serialize=False)
-    Email = models.CharField("Почта", max_length=45, unique=True)
-    FIO = models.CharField("Инициалы", max_length=45, null=False)
-    Password = models.CharField("Пароль", max_length=45, null=False)
-
-    def __str__(self):
-        return self.ID
-
-
-class UserType(models.Model):
     Types = (
         ('B', 'Business'),
         ('E', 'Expert'),
         ('C', 'Common')
     )
 
-    ID_user = models.ForeignKey(User, on_delete=models.CASCADE)
-    Type_user = models.CharField("Типы пользователей", max_length=3, choices=Types, blank=False)
+    ID = models.AutoField("Айдишник", primary_key=True, auto_created=True, serialize=False)
+    Email = models.CharField("Почта", max_length=45, unique=True)
+    FIO = models.CharField("Инициалы", max_length=45, null=False)
+    Password = models.CharField("Пароль", max_length=45, null=False)
+    Type_user = models.CharField("Типы пользователей", max_length=3, choices=Types, blank=False, default="C")
 
     def __str__(self):
-        return self.ID_user
+        return self.ID
 
 
 class Admin(models.Model):
@@ -38,35 +31,28 @@ class Admin(models.Model):
 
 
 class Post(models.Model):
-    ID_post = models.AutoField("Айдишник поста", primary_key=True, auto_created=True, serialize=False)
-    Name_post = models.CharField("Название поста", max_length=45, null=False)
-    Discription = models.CharField("Описание", max_length=45, null=False)
-    Creator_id = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL, related_name='User_id', verbose_name="Айди юзера")
-    Approve_flag = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.ID_post
-
-
-class PostType(models.Model):
     Types = (
         ('P', 'Post'),
         ('Ev', 'Event'),
         ('BO', 'Buisness-offer')
     )
 
-    Type_post = models.CharField("Типы постов", max_length=3, choices=Types, blank=False)
-    Id_post = models.ForeignKey(Post, null=True, blank=True, on_delete=models.SET_NULL, related_name='Post_id',verbose_name="Айди поста")
+    ID_post = models.AutoField("Айдишник поста", primary_key=True, auto_created=True, serialize=False)
+    Name_post = models.CharField("Название поста", max_length=45, null=False)
+    Description = models.TextField("Описание", null=True, blank=True)
+    Creator_id = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL, related_name='User_id', verbose_name="Айди юзера")
+    Approve_flag = models.BooleanField(default=False)
+    Type_post = models.CharField("Типы постов", max_length=3, choices=Types, blank=False, default="P")
 
     def __str__(self):
-        return self.Type_post
+        return self.ID_post
 
 
 class Chat(models.Model):
     Id_post = models.ForeignKey(Post, null=False, blank=True, on_delete=models.CASCADE, related_name='Post_id_exist',verbose_name="Айди поста")
     Date = models.DateField("Дата отправки сообщения", max_length=4)
     User_id = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL, related_name='User_id_exist', verbose_name="Айди юзера")
-    Text = models.CharField("Текст сообщения", max_length=150, null=False)
+    Text = models.TextField("Текст сообщения", null=True, blank=True)
 
     def __str__(self):
         return self.Id_post
