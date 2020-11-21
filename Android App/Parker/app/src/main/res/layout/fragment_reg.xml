@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.LoginFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Регистрация"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/email_reg_input"
+        android:layout_marginBottom="30dp"
+        android:textSize="25sp"/>
+
+    <EditText
+        android:id="@+id/email_reg_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_above="@id/fio_reg_input"/>
+
+    <EditText
+        android:id="@+id/fio_reg_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_centerInParent="true"
+        android:layout_marginVertical="15dp"/>
+
+    <EditText
+        android:id="@+id/city_reg_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_below="@id/fio_reg_input"/>
+
+    <EditText
+        android:id="@+id/pass_reg_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="15dp"
+        android:layout_below="@id/city_reg_input"/>
+
+    <Button
+        android:id="@+id/adm_login_btn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Вход"
+        android:layout_below="@id/pass_reg_input"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/adm_reg_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Регистрация"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"/>
+
+
+</RelativeLayout>
