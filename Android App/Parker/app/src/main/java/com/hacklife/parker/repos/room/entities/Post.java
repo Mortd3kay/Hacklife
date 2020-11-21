@@ -14,6 +14,8 @@ public class Post {
     private int db_id;
     private String title;
     private String desc;
+    private String phone;
+    private String email;
     private boolean business;
     private String creator;
     private String address;
@@ -26,10 +28,12 @@ public class Post {
     @Ignore
     private LiveData<List<Message>> messages;
 
-    public Post(int db_id, String title, String desc, boolean business, String creator, String address, double longitude, double latitude, String type, boolean confirmed, int pluses) {
+    public Post(int db_id, String title, String desc, String phone, String email, boolean business, String creator, String address, double longitude, double latitude, String type, boolean confirmed, int pluses) {
         this.db_id = db_id;
         this.title = title;
         this.desc = desc;
+        this.phone = phone;
+        this.email = email;
         this.business = business;
         this.creator = creator;
         this.address = address;
@@ -50,6 +54,14 @@ public class Post {
 
     public int getDb_id() {
         return db_id;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public LiveData<List<Message>> getMessages() {

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/is_business"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Бизнес"
+        android:checked="false"/>
+
+    <EditText
+        android:id="@+id/title_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Заголовок"/>
+
+    <EditText
+        android:id="@+id/desc_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:hint="Описание"/>
+
+    <EditText
+        android:id="@+id/email_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:visibility="gone"
+        android:hint="Рабочий Email"/>
+
+    <EditText
+        android:id="@+id/phone_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:hint="Рабочий телефон"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/marker_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/cities"
+        android:layout_margin="10dp"
+        android:inputType="textMultiLine"
+        android:textColor="@color/blue"/>
+
+
+</LinearLayout>
