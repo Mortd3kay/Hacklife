@@ -1,57 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <CheckBox
         android:id="@+id/is_business"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Бизнес"
-        android:checked="false"/>
-
-    <EditText
-        android:id="@+id/title_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Заголовок"/>
+        android:layout_margin="10dp"
+        android:checked="false"
+        android:text="Бизнес" />
 
     <EditText
         android:id="@+id/desc_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:hint="Описание"/>
+        style="@style/inputs_style"
+        android:layout_marginBottom="15dp"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:hint="Описание"
+        android:inputType="textMultiLine" />
 
     <EditText
         android:id="@+id/email_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/inputs_style"
+        android:layout_marginBottom="15dp"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:hint="Рабочий Email"
         android:inputType="textEmailAddress"
-        android:visibility="gone"
-        android:hint="Рабочий Email"/>
+        android:visibility="gone" />
 
     <EditText
         android:id="@+id/phone_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
+        style="@style/inputs_style"
+        android:layout_marginBottom="15dp"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
         android:hint="Рабочий телефон"
-        android:visibility="gone"
-        />
+        android:inputType="phone"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/title_input"
+        style="@style/inputs_style"
+        android:layout_marginBottom="15dp"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:hint="Заголовок"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/marker_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="@tools:sample/cities"
         android:layout_margin="10dp"
         android:inputType="textMultiLine"
-        android:textColor="@color/blue"/>
+        android:text="Санкт-Петербург, ул. Есенина д.34 к.1"
+        android:textColor="@color/blue" />
+
 
 
 </LinearLayout>

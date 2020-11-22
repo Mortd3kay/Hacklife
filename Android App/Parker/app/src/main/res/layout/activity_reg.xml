@@ -5,7 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.RegActivity"
-    android:id="@+id/frame">
+    android:id="@+id/frame"
+    android:background="@drawable/ic_parker_background">
+
+    <ImageView
+        android:id="@+id/main_label"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_parker_text"
+        android:layout_marginTop="150dp"/>
 
 
 </FrameLayout>
