@@ -12,7 +12,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 @Dao
-public interface PostDao {
+public interface PostDao{
     @Insert
     void insert(Post post);
 
@@ -33,4 +33,7 @@ public interface PostDao {
 
     @Query("select * from post where creator = :id")
     LiveData<Post> getByCreator(int id);
+
+    @Query("select * from post where latitude = :lat and longitude = :lon")
+    LiveData<Post> getByCoordinates(double lat, double lon);
 }

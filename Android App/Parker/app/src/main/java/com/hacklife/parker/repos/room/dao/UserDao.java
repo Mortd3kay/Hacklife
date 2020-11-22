@@ -12,7 +12,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 @Dao
-public interface UserDao {
+public interface UserDao{
     @Insert
     void insert(User user);
 

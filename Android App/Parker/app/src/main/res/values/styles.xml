@@ -7,4 +7,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="inputs_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/input_shape</item>
+        <item name="hintTextColor">#878787</item>
+        <item name="android:paddingHorizontal">10dp</item>
+    </style>
+
+    <style name="btn_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/btn_shape</item>
+    <item name="android:paddingHorizontal">10dp</item>
+    </style>
+
 </resources>
